@@ -68,7 +68,24 @@ public int getI(){
         return this.i;
 }
 
-
+    public void busqueda(int valor){
+        if(!vacia()){
+            i =0;
+            Nodo temp=frente;
+            if(valor==frente.getValor()){
+                System.out.println("El valor "+valor+" se ubica en el lugar "+i);
+            }else{
+                while(temp!= null){
+                    if(valor==temp.getValor()){
+                        System.out.println("El valor de "+valor+ " es igual a :"+(i+1 ) );
+                        break;
+                    }
+                    i++;
+                    temp= temp.getProximo();
+                }
+            }
+        } else System.out.println("Valor no encontrado");
+    }
 
 
 }

@@ -35,8 +35,33 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        this.InsertarBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    int numero = Integer.parseInt(insertarTxt.getText());
+                    ColaLV.getItems().addAll(cola.insertar(numero));
+                    insertarTxt.clear();
+                } catch (Exception e) {
+                }
+            }
+        }
+        );
 
+        this.BuscarBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
 
+                try {
+                    int bus = parseInt(BuscarTxt.getText());
+                    cola.busqueda(bus);
+                    asd (ColaLV,cola.getI());
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Ingresa números en el recuadro");
+                }
+
+            }
+        });
     }
 public void asd (ListView listView, int valor){
         listView.getSelectionModel().select(valor);

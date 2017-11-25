@@ -15,7 +15,10 @@ public class Nodo {
     }
 
     //Constructor
-
+    public  Nodo(int valor){
+        this.valor=valor;
+        this.proximo=null;
+    }
 
 
 
