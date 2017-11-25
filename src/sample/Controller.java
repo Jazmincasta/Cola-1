@@ -30,7 +30,7 @@ public class Controller implements Initializable {
     ListView ColaLV;
 
     public Cola cola=new Cola();
-
+    private int tamaño =0 ;
 
 
     @Override
@@ -62,6 +62,15 @@ public class Controller implements Initializable {
 
             }
         });
+
+        this.TamañoBtn.setOnAction(new EventHandler<ActionEvent>( ) {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println(cola.getTamaño());
+                TamañoLB.setText(cola.Tamaño());
+            }
+        });
+
     }
 public void asd (ListView listView, int valor){
         listView.getSelectionModel().select(valor);

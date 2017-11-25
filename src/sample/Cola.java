@@ -33,7 +33,7 @@ public class Cola {
             temp.setProximo(nuevo);
 
         }
-
+        tamaño ++;
         return nuevo.getValor();
 
     }
@@ -85,6 +85,14 @@ public int getI(){
                 }
             }
         } else System.out.println("Valor no encontrado");
+    }
+
+    public String Tamaño(){
+        if(!vacia()){
+            return "El tamaño es : "+ tamaño;
+        }else {
+            return "La cola esta vacia";
+        }
     }
 
 
